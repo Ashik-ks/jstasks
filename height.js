@@ -1,7 +1,9 @@
 {
+    let INPUT1 = 0
     let BTN = document.getElementById('btn').onclick = function (){
 
         document.getElementById("result").style.display = "block";
+        document.getElementById("ww").style.display = "block";
         document.body.style.backgroundColor = "yellow";
         let INPUT = document.getElementById('input').value;
         console.log("INPUT :" ,INPUT);
@@ -16,33 +18,36 @@
         console.log(arr)
 
         if(SELECTBOX1 === "Centimeter" && SELECTBOX2 === "Meter"){
-            INPUT = INPUT / 100;
+            INPUT1 = INPUT / 100;
             console.log(INPUT)
         }
 
         if(SELECTBOX1 === "Centimeter" && SELECTBOX2 === "Inch"){
-            INPUT = INPUT / 2.54;
+            INPUT1 = INPUT / 2.54;
             console.log(INPUT)
         }
         if(SELECTBOX1 === "Meter" && SELECTBOX2 === "Inch"){
-            INPUT = INPUT * 39.37;
+            INPUT1 = INPUT * 39.37;
             console.log(INPUT)
         }
         if(SELECTBOX1 === "Meter" && SELECTBOX2 === "Centimeter"){
-            INPUT = INPUT * 100;
+            INPUT1 = INPUT * 100;
             console.log(INPUT)
         }
         if(SELECTBOX1 === "Inch" && SELECTBOX2 === "Centimeter"){
-            INPUT = INPUT * 2.54;
+            INPUT1 = INPUT * 2.54;
             console.log(INPUT)
         }
         if(SELECTBOX1 === "Inch" && SELECTBOX2 === "Meter"){
-            INPUT = INPUT / 39.37;
+            INPUT1 = INPUT / 39.37;
             console.log(INPUT)
         }
         
         let x= document.getElementById('result');
-        x.innerHTML  = (` ${INPUT}`);
+        x.innerHTML  = (` ${INPUT1}  ${SELECTBOX2}`);
+
+        let y= document.getElementById('ww');
+        y.innerHTML  = (` ${SELECTBOX1}=${INPUT}, ${SELECTBOX2}= `);
         
     }
 
